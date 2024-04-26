@@ -1,12 +1,9 @@
-# data-tooling
+# data_lineage and data_quality
 
 Intended for in-place instrumentation of Jupyter notebooks and other Python scripts.
 
-This repo's Python requirements currently represent a sort of kit-n-caboodle of data libs until
-such time I break them out separately. Remove libs (and related functions in source files) as needed.
-
 ## Key Points
-- Lineage functions are generally setup as wrappers and accept the same + additional args as lib being wrapped (pandas, etc.).
+- CSV/pandas is the only input/output supported by instrumentation: `read_csv` and `to_csv` replace pandas equivalents, accept the same + additional args, and perform same function.
 - OpenLineage has the notion of _job_, which should generally correspond 1:1 with a Jupyter notebook. Multiple runs will occur underneath each job (e.g., each time you run the notebook).
 - OpenLineage supports storage of standard and ad hoc sets of metadata via _facets_. These can be found in the Marquez UI upon drilling into a dataset (or job).
 - OpenLineage uses the notion of _namespaces_. By default, for a given project there will be two namespaces: 'file' for all datasets, and 'notebook-local' for jobs.

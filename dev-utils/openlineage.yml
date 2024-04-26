@@ -1,0 +1,7 @@
+transport:
+  type: http
+  url: https://localhost:5000
+  endpoint: api/v1/lineage
+#  auth:
+#    type: api_key
+#    apiKey: f048521b-dfe8-47cd-9c65-0cb07d57591e

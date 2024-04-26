@@ -1,0 +1,34 @@
+db:
+  url: jdbc:postgresql://marquez-db:5432/marquez
+  user: postgres
+  password: password
+  driverClass: org.postgresql.Driver
+
+migrateOnStartup: true
+
+# Enables HTTP server configuration overrides (see: https://www.dropwizard.io/en/stable/manual/configuration.html#servers)
+server:
+  applicationConnectors:
+  - type: http
+    port: ${MARQUEZ_PORT:-5000}
+    httpCompliance: RFC7230_LEGACY
+  adminConnectors:
+  - type: http
+    port: ${MARQUEZ_ADMIN_PORT:-5001}
+  # Enables access logs formatted as JSON
+  # requestLog:
+  #   appenders:
+  #     - type: console
+  #       layout:
+  #         type: access-json
+
+logging:
+  level: INFO
+  appenders:
+    - type: console
+
+tags:
+  - name: PII
+    description: Personally identifiable information
+  - name: SENSITIVE
+    description: Contains sensitive information
