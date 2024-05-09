@@ -27,6 +27,8 @@ files) as needed.
 
 ### Notebook: Input and Output Lineage
 
+Examples can be found in the notebooks directory, generally looks like:
+
 ```python
 # At or near top of notebook
 import pandas as pd
