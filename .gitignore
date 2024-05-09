@@ -1,3 +1,9 @@
 .idea/
 .venv/
 venv/
+**/uncommitted/*
+
+# Everything gx for now
+gx/
+
+**/__pycache__/**
